@@ -1,0 +1,18 @@
+<div class="item"
+[style.backgroundImage]="
+'url(' + images[indexImageActive] + ')'
+">
+</div>
+<div class="botoes-controle">
+  <button
+    *ngFor="let imagem of images; index as i"
+    [class.ativo]="i === indexImageActive"
+    (click)="stopTimer(); activeImage(i)"></button>
+</div>
+<img
+  *ngFor="let imagem of images"
+  [src]="imagem"
+  width="1"
+  height="1"
+  style="opacity: 0; position: fixed"
+/>
